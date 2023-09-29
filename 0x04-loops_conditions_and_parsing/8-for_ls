@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+#lists the content of a dir
 # Iterate through files in the current directory
 for file in *
 do
