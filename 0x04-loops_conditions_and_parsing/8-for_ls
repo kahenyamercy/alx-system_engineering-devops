@@ -1,13 +1,7 @@
 #!/usr/bin/env bash
-#lists the content of a dir
-# Iterate through files in the current directory
-for file in *
+# displays the content of the current working directory.
+
+for i in *
 do
-    # Check if the file is a regular file (not a directory) and contains a dash in its name
-    if [ -f "$file" ] && [[ "$file" == *-* ]]
-    then
-        # Extract part of the name after the first dash
-        name=$(echo "$file" | cut -d'-' -f2-)
-        echo "$name"
-    fi
+    echo "$i" | cut -d'-' -f2
 done
