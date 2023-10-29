@@ -1,0 +1,27 @@
+    • Designing a Simple Web Infrastructure
+    • 
+    • User Accesses the Website:
+A user wants to access the website hosted at www.foobar.com. The user types the URL www.foobar.com into their web browser.
+    • Domain Name and DNS Records:
+        ◦ Domain Name (www.foobar.com): A domain name is the human-readable address that users type into their browsers to access a website.
+        ◦ DNS (Domain Name System) Records: The DNS translates the domain name www.foobar.com into an IP address (for example, 8.8.8.8). The specific DNS record "www" in www.foobar.com is a CNAME (Canonical Name) record that points to the domain's root record, indicating that www.foobar.com is an alias for foobar.com.
+    • Server:
+        ◦ Role of the Server: The server (with IP address 8.8.8.8) is a physical or virtual machine that hosts the entire web infrastructure.
+        ◦ Communication with User's Computer: When the user types www.foobar.com, their computer sends a request to the server at IP address 8.8.8.8, asking for the website content.
+    • Web Server (Nginx):
+        ◦ Role of the Web Server: Nginx is a web server that handles HTTP requests from clients (browsers) and serves static files like HTML, CSS, and images to the users.
+    • Application Server:
+        ◦ Role of the Application Server: The application server hosts the dynamic content of the website. It processes requests, executes server-side code, and interacts with the database.
+        ◦ Application Files (Your Code Base): The application files contain the server-side code, such as PHP, Python, or Ruby scripts, responsible for generating dynamic content based on user requests.
+    • Database (MySQL):
+        ◦ Role of the Database: MySQL is a relational database management system (RDBMS) that stores and retrieves data. It is used to store dynamic content, user information, and other application data.
+Issues with This Infrastructure:
+    • Single Point of Failure (SPOF):
+        ◦ Problem: If any component (server, web server, application server, or database) fails, the entire website becomes inaccessible.
+        ◦ Solution: To address this, redundancy and failover mechanisms can be implemented, such as load balancing and backup servers, to ensure high availability.
+    • Downtime During Maintenance:
+        ◦ Problem: When maintenance tasks like deploying new code are required, the web server needs to be restarted, causing downtime.
+        ◦ Solution: Implement rolling updates and deploy changes gradually to minimize downtime. Use load balancers to direct traffic away from servers undergoing maintenance.
+    • Limited Scalability:
+        ◦ Problem: If the website experiences a sudden surge in traffic, the single server may not handle the load efficiently, leading to slow performance or crashes.
+        ◦ Solution: Implement horizontal scaling by adding more servers and distributing the traffic using load balancers. Use cloud-based solutions that allow automatic scaling based on demand.
