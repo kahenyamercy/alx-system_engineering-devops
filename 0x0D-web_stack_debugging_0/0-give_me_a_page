@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#service my apache server then restart thedocker container
+service apache2 start
+sudo systemctl restart docker
