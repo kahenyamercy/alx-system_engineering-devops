@@ -7,4 +7,4 @@ eval $("ssh-agent")
 #path to identityfile
 ssh-add ~/.ssh/id_rsa
 #username and ip address
-ssh ubuntu@107.20.74.249
+ssh ubuntu@100.26.249.247
